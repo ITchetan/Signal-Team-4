@@ -1,42 +1,17 @@
 // **** DAILY MEETING 9.30am and 1.00pm
 
 function controller() {
-  //initilise game
-  // handles button presses
-  //
-  // while count < 21 and stand is not pressed{
-
-  //    IF draw presed
-  //       draw(player)
-  //       check
-  //draw(computer)
-  //draw(computer)
-  //compares scores
-  //says who wins
-
-
-}
-
-
-function createDeck () {
-  //creates an array of 52 cards
-  //return deck
-}
-
-function draw (deck, hand) {
-// choose random number from 0 - array.length-1
-// remove selected card from deck and put into hand
-// Button link = HIT
-
-}
-
-function check(hand) {
-//returns count of hand
-
-}
-
-function initilise(){
-  // creates deck
-  // draws two cards
-  // Button Link = DEAL
+//Handles the game logic
+  initiliseGame()
+  while (player.handCount < 21 && standButton.pressed = false) {
+    if drawButton.pressed == true {
+      player.cardDraw(user)
+      player.handCountUpdate()
+      drawButton.pressed = false
+    }
+  }
+  player.cardDraw(computer)
+  player.cardDraw(computer)
+  player.compareHandCount()
+  player.displayWinner()
 }
