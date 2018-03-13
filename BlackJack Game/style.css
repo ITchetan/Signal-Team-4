@@ -1,0 +1,78 @@
+/* Set Background image for page */
+html {
+  background: url();
+}
+
+/* Nav bar */
+.nav{
+  background-color: #ffffff;
+  color:#000000;
+  list-style:none;
+  text-align: right;
+  padding: 20px 0 20px 0;
+}
+
+.nav > li {
+  display: inline-block;
+  padding: 0 25px 0 25px;
+  font-size:12px
+}
+
+.nav > li > a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav > li > a:hover {
+  color: #c1c1c1;
+}
+
+.logo{
+  color: #000000;
+  float:left;
+  padding-left: 25px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* End nav bar */
+
+h1{
+  font-size: 48px;
+  color: green;
+}
+
+.a {
+  color:black;
+  display: inline-block;
+}
+
+/* Buttons */
+
+button{
+  background-color:green;
+  color:white;
+  border:white;
+  padding: 15px 32px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  width: 200px
+  height: 100px
+  top: 10%;
+}
+
+/* Footer */
+footer{
+  border-top: 1px solid grey;
+  text-align: center;
+  font-size: 12px;
+  line-height: 8px;
+  margin-top: 4px;
+  color: #c1c1c1;  /* Grey */
+}
