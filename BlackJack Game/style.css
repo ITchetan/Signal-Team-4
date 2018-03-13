@@ -1,6 +1,6 @@
 /* Set Background image for page */
 html {
-  background: url(tableplain.jpg);
+  background: url();
 }
 
 body{
@@ -66,7 +66,7 @@ button{
   font-size: 24px;
   margin: 4px 2px;
   border-radius: 12px;
-  width: 200px
+  width: 400px
   height: 100px
   top: 10%;
 }
