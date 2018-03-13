@@ -3,6 +3,10 @@ html {
   background: url();
 }
 
+body{
+  font-family: 'Arial',serif;
+}
+
 /* Nav bar */
 .nav{
   background-color: #ffffff;
@@ -66,6 +70,39 @@ button{
   height: 100px
   top: 10%;
 }
+
+#deal_button{
+  background: gold;
+  color: #000000;
+}
+
+#deal_button:hover{
+  background-color: white;
+  color: #000000;
+}
+
+#hit_button{
+  background: #32CD32; /* LimeGreen */
+  color: #000000;
+}
+
+#hit_button:hover{
+  background-color: white;
+  color: #000000;
+}
+
+#stand_button{
+  background: #FF0000;
+  color:#000000;
+}
+
+#stand_button:hover{
+  background-color:white;
+  color: #000000;
+}
+}
+
+
 
 /* Footer */
 footer{
