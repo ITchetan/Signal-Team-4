@@ -1,9 +1,9 @@
 class Player {
   constructor (name) {
-    this.name = name;
-    this.hand = [];
-    this.handCount = 0;
-    this.score = 0;
+    this.name = name
+    this.hand = []
+    this.handCount = 0
+    this.score = 0
   }
 
   // Methods
