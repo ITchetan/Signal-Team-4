@@ -40,3 +40,27 @@ function initilise(){
   // draws two cards
   // Button Link = DEAL
 }
+
+// ------- Button onclick functions ---------
+
+function dealButton() {
+    var x = document.getElementById("dealCards");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+function hitButton () {
+  alert("Draw player another card");
+  // display 1 card to player
+}
+
+function standButton () {
+  alert("player has selected stand, do not issue any more cards");
+  // do not draw any more cards to player
+}
+
+
+
