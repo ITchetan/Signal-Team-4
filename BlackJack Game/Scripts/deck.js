@@ -17,11 +17,13 @@ class Deck {
             else {
               value = id
             }
+            //adds the card to the decklist
             this.decklist.push(new card(id, value, suit))
 
         }
 
     }
+    //displays the decklist to the console, used for testing purposes
     console.log(this.decklist)
 }
 
@@ -30,6 +32,9 @@ class Deck {
 
   cardRemove() {
     //removes a card from the deck, is called when a card is drawn
+    randNum = Math.floor(Math.random()*51)+1;
+    this.decklist.remove(randNum);
+
   }
 
 
