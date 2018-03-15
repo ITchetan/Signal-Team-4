@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 
 <html lang='en'>
+<<<<<<< HEAD
 <head>
   <meta charset="utf-8">
   <title>Blackjack</title>
   <link href="style.css" rel="stylesheet" type="text/css">
   <script src= "blackjack.js"> </script>
+  <script type="text/javascript" src="Scripts/blackjack.js"></script>
+  <script type="text/javascript" src="Scripts/card.js"></script>
+  <script type="text/javascript" src="Scripts/deck.js"></script>
+  <script type="text/javascript" src="Scripts/player.js"></script>
+  <script type="text/javascript" src="Scripts/gameObject.js"></script>
   
 </head>
 
@@ -24,31 +30,47 @@
   <!-- Start of header -->
   <header>
 
-  <div class = "banner">
-    <img class="banner_image" src="Picture7.png" alt="Welcome to BLACKJACK">
-  </div>
+    <div class = "banner">
+      <img class="banner_image" src="Picture7.png" alt="Welcome to BLACKJACK">
+    </div>
+
   </header>
 
+
   <!-- End of header -->
+  <div id='headings'>
+    <h4 id='playerscore'> Player Score: placeholder </h4>
+    <h4 id='computerscore'>Computer Score: placeholder </h4>
+  </div>
 
   <!-- Player vs Computer Heading -->
-  <p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
+
   
-  <section id='main'>
-  <img id="dealCards" src='playingcard.png' alt='Error picutre image'>
+  
+  <section id='main' width = '300' height = '200'>
+    <img id="dealCards" src='playingcard.png'>
 
   </section>
 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 
 
+  <article>
+    <div align='center'>
+      <button id = 'deal_button' onclick='myFunction()'>Deal Card </button>
+      <button id = 'hit_button' onclick='()'>Hit Card </button>
+      <button id = 'stand_button' onclick='standFunction()'>Stand Card </button>
+    </div>
 
-
-  <article align='center'>
-
-  <button onclick='dealButton()'>Deal Card </button>
-  <button onclick='()'>Hit Card </button>
-  <button onclick='()'>Stand Card </button>
 
   </article>
 

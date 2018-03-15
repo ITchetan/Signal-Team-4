@@ -19,16 +19,9 @@ header{
 
 article{
   background: url('wood.jpg');
+  font-color:;
 }
 
-
-#myDIV {
-  width: 50%;
-  padding: 50px 0;
-  text-align: center;
-  background-color: lightblue;
-  margin-top: 20px;
-}
 
 /* Create nav bar */
 .nav{
@@ -73,10 +66,34 @@ article{
 
 /* End of Nav Bar / Banner */
 
+/* Score Headings */
+#headings {
+  text-align:center;
+  display:inline;
+  font-color:white;
+}
+
+#playerscore {
+  font-color:white;
+  font-size:16px;
+  float:left;
+  padding: 0px 0px 0px 50px ;
+}
+#computerscore {
+  font-color:white;
+  font-size:16px;
+  float:right;
+  padding: 0px 50px 0px 0px ;
+}
+
+h4{
+  font-color: white;
+}
+
 #dealCards {
     width: 10%;
     padding: 50px 10px;
-    text-align: center;   
+    text-align: left;   
     margin-top: 20px;
     display:none;
 }
@@ -123,7 +140,6 @@ button {
   color: #000000;
 }
 
-
 #hit_button{
   background: #32CD32; /* LimeGreen */
   color: #000000;
@@ -146,25 +162,7 @@ button {
 
 /* End of Buttons */
 
-/* Playing Card Image */
 
-
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    padding: 50px 16px;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-    padding: 2px 16px;
-}
 
 
 /* Footer */

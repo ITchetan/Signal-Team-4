@@ -43,7 +43,7 @@ function initilise(){
 
 // ------- Button onclick functions ---------
 
-function dealButton() {
+function myFunction() {
     var x = document.getElementById("dealCards");
     if (x.style.display === "block") {
         x.style.display = "none";
@@ -52,8 +52,6 @@ function dealButton() {
     }
 }
 
-function hitButton () {
-  
 
 
 
