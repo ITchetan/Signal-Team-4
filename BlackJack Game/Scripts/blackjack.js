@@ -8,6 +8,7 @@ function hitButton () {
   var card = user.cardDraw(newDeck)
   document.getElementById('image' + imageCounter).src = user.displayCard (card)
   imageCounter++
+  document.getElementById('playerScore').innerHTML = user.handCount
 }
 
 function dealButton () {
@@ -24,8 +25,7 @@ function dealButton () {
   document.getElementById('image3').src = user.displayCard (card)
   var card = user.cardDraw(newDeck)
   document.getElementById('image4').src = user.displayCard (card)
-
-  user.handCount()
+  document.getElementById('playerScore').innerHTML = user.handCount
 }
 
 function standButton () {
@@ -34,6 +34,7 @@ function standButton () {
   var card = computer.cardDraw(newDeck)
   document.getElementById('image2').src = computer.displayCard (card)
   // add compare score and winning screen
+  document.getElementById('computerScore').innerHTML = computer.handCount
 }
 
 function myFunction() {
