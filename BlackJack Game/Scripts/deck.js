@@ -11,7 +11,7 @@ class Deck {
       }
     }
     // Display the deck in the console for testing purposes
-    // console.log(this.decklist);
+    console.log(this.decklist);
   }
 
   // Methods

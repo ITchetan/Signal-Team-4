@@ -3,23 +3,11 @@ var user
 var computer
 var newDeck
 
-function controller() {
-//Handles the game logic
-  //Creates deck and draw two cards to the player
-  deck.CreateDeck()
-  player.cardDraw(User)
-  player.cardDraw(User)
-  //Allows the player to draw cards as long as they haven't gone over 21
-  // or pressed stand. Once these conditions are false, ends the players turn
-  // while (user.handCount < 21 && standButton.pressed = false) {
-  //   if drawButton.pressed == true {
-  //     player.cardDraw(user)
-  //     player.handCountUpdate()
-  //     drawButton.pressed = false
-}
+
 
 function hitButton () {
   user.cardDraw(newDeck)
+  user.handSum()
 }
 
 function dealButton () {
@@ -30,15 +18,41 @@ function dealButton () {
   // console.log(deck.decklist)
   user.cardDraw(newDeck)
   user.cardDraw(newDeck)
+  user.handSum()
+  user.handCount
+  //console.log(user.handCount)
+
 }
 
 function standButton () {
   computer.cardDraw(newDeck)
   computer.cardDraw(newDeck)
+  computer.handSum()
+  computer.handCount
+  console.log(compareSore())
+
   // add compare score and winning screen
 }
 
-function myFunction() {
+function compareScore()
+{
+  if (user.handCount > computer.handCount) {
+    var winner = "You win!!"
+
+  }
+  if (user.handCount == computer.handCount) {
+    var winner = "draw!!"
+
+  } else {
+
+    var winner = "Computer wins!!"
+
+  }
+
+  return winner
+}
+
+function myFuntion() {
     var x = document.getElementById("dealCards");
     if (x.style.display === "block") {
         x.style.display = "none";

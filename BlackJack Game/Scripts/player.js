@@ -1,6 +1,6 @@
 class Player {
   constructor () {
-    //this.name = name
+    this.name = name
     this.hand = []
     this.handCount = 0
     this.score = 0
@@ -14,11 +14,20 @@ class Player {
     this.hand.push(card)
     deck.decklist.splice(randNum, 1)
     console.log(this.hand)
-    for (var i in this.hand) {
-      this.handCount += this.hand[i].cardValue
-    }
-    // console.log(this.handCount)
+
   }
+
+  handSum () {
+        for (var i in this.hand) {
+            this.handCount += this.hand[i].cardValue
+            }
+
+        //return this.handCount
+        //console.log(this.handCount)
+  }
+
+
+
 
   displayCard (card) {
     // Five empty boxes under each player on the screen
