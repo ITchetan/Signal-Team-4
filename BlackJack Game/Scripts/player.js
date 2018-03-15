@@ -20,6 +20,5 @@ class Player {
     var dog = deck.decklist[randNum]
     this.hand.push(dog)
     deck.decklist.splice(randNum, 1)
-  
   }
 }

@@ -15,9 +15,4 @@ class Deck {
 
   // Methods
 
-  cardRemove () {
-    // removes a card from the deck, is called when a card is drawn
-    var randNum = Math.floor(Math.random() * 51) + 1
-    this.decklist.remove(randNum)
-  }
 }
