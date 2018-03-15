@@ -13,10 +13,11 @@ class GameObject {
   // Methods
 
 
-  compareHandCount () {
+  compareCardValue () {// work in progress
     // compares the hand count of all players and return the winer
+    // Work in progress Chetan
   }
-  displayWinner() {
-    // displays the winning message
+  displayWinner() {// work in progress
+    // displays the winning message work
   }
 }
