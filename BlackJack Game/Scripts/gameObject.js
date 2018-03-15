@@ -1,16 +1,12 @@
 class GameObject {
   constructor () {
   }
- //console.log(user.cardDraw(newDeck, user))
- //var userSum = user.handCount()
-
- //console.log(userSum)
   // Methods
 
-  cardValueCount(this.User){
-    var userCardVaue = user.handCount;
-    console.log(userCardVaue);
-  }
+  // cardValueCount(this.User){
+  //   var userCardVaue = user.handCount;
+  //   console.log(userCardVaue);
+  // }
 
 
 
