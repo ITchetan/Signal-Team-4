@@ -1,63 +1,107 @@
 <!DOCTYPE html>
+
 <html lang='en'>
-  <head>
-    <meta charset="utf-8">
-    <title>BlackJack Game</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="Scripts/blackjack.js"></script>
-    <script type="text/javascript" src="Scripts/card.js"></script>
-    <script type="text/javascript" src="Scripts/deck.js"></script>
-    <script type="text/javascript" src="Scripts/player.js"></script>
-    <script type="text/javascript" src="Scripts/gameObject.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Blackjack</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src= "blackjack.js"> </script>
+  <script type="text/javascript" src="Scripts/blackjack.js"></script>
+  <script type="text/javascript" src="Scripts/card.js"></script>
+  <script type="text/javascript" src="Scripts/deck.js"></script>
+  <script type="text/javascript" src="Scripts/player.js"></script>
+  <script type="text/javascript" src="Scripts/gameObject.js"></script>
 
-  <body>
-    <!-- Set up heading / nav bar -->
-    <ul class='nav'>
-      <div class = 'logo'>
-        LOGO*
-      </div>
+</head>
 
-          <li><a href='#' title= 'Home' target='_blank'>Home</a></li>
-          <li><a href="#" title="About" target="_blank">About</a></li>
-			    <li><a href="#" title="Information" target="_blank">Information</a></li>
+
+<body>
+  <nav>
+    <ul class = 'nav'>
+      <div class="logo"> LOGO </div>
+      <li><a href="#" title="Home" target="_blank">Home</a></li>
+      <li><a href="#" title="About" target="_blank">About</a></li>
+      <li><a href="#" title="Instructions" target="_blank">Instructions</a></li>
     </ul>
+  </nav>
 
-    <!-- End of nav bar -->
-    <!-- Create page headings -->
+  <!-- End of Nav -->
+  <!-- Start of header -->
+  <header>
 
-        <h1 align = center> Welcome to Blackjack </h1>
-        <h3 align = center> Single Player Online Game </h3>
-
-        <!-- Create some line breaks -->
-        <br>
-        <br>
-
-        <h2 align = center> Player Vs Computer </h2>
-
-    <p class = 'score' align=center> Score </p>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <!-- Buttons -->
-
-    <div align ="center">
-      <button type="button" id="deal_button" onclick='functionname()'>Deal</button>
-      <button type="button" id="hit_button" onclick='functionname()'>Hit</button>
-      <button type="button" id="stand_button" onclick='functionname()'>Stand</button>
+    <div class = "banner">
+      <img class="banner_image" src="Picture7.png" alt="Welcome to BLACKJACK">
     </div>
 
-    <!-- End Buttons -->
+  </header>
 
 
-    <!-- Footer -->
-    <footer class='mainfooter'>
-      <p> &copy; || Created by C.Baadkar, S.Kim, B.White, K.Brown | 2018 </p>
+  <!-- End of header -->
+  <div id='headings'>
+    <h4 id='playerscore'> Player Score: placeholder </h4>
+    <h4 id='computerscore'>Computer Score: placeholder </h4>
+  </div>
 
-  </body>
+  <!-- Player vs Computer Heading -->
+
+
+
+  <section id='main' width = '300' height = '200'>
+    <img id="dealCards" src='playingcard.png'>
+
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+  <article>
+    <div align='center'>
+      <button id = 'deal_button' onclick='myFunction()'>Deal Card </button>
+      <button id = 'hit_button' onclick='()'>Hit Card </button>
+      <button id = 'stand_button' onclick='standFunction()'>Stand Card </button>
+    </div>
+
+
+  </article>
+
+
+
+  <!-- End Heading--
+
+  <!-- Button -->
+
+<!--
+  <article>
+    <div align = 'center'>
+      <button type="button" id="deal_button" onclick="dealButton()"> Deal </button>
+      <button type='button' id="hit_button" onclick="hitButton()"> Hit </button>
+      <button type='button' id="stand_button" onclick="standButton()"> Stand </button>
+    </div>
+  </article>
+
+-->
+
+
+
+
+
+
+
+
+<!-- FOOTER SECTION -->
+
+
+  <footer class='mainfooter'>
+    <p>&copy; | Created by C.Baadkar, S.Kim, B.White, K.Brown | 2018 </p>
+  </footer>
+</body>
 </html>
