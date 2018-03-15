@@ -8,6 +8,8 @@ function controller() {
   player.cardDraw(User)
   player.cardDraw(User)
 
+
+
   //Allows the player to draw cards as long as they haven't gone over 21
   // or pressed stand. Once these conditions are false, ends the players turn
   while (player.handCount < 21 && standButton.pressed = false) {

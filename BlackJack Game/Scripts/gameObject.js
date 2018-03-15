@@ -9,7 +9,10 @@ class GameObject {
     user.cardDraw(newDeck, user)
 
   }
+ console.log(user.cardDraw(newDeck, user))
+ var userSum = user.handCount()
 
+ //console.log(userSum)
   // Methods
 
 
