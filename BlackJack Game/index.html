@@ -16,92 +16,81 @@
 
 
 <body>
-  <nav>
+<div class = 'container'>
+  <nav> 
     <ul class = 'nav'>
-      <div class="logo"> LOGO </div>
+      <div class="logo"> 
+      S.18
+      </div>
       <li><a href="#" title="Home" target="_blank">Home</a></li>
       <li><a href="#" title="About" target="_blank">About</a></li>
       <li><a href="#" title="Instructions" target="_blank">Instructions</a></li>
     </ul>
   </nav>
 
-  <!-- End of Nav -->
-  <!-- Start of header -->
   <header>
-
-    <div class = "banner">
-      <img class="banner_image" src="Picture7.png" alt="Welcome to BLACKJACK">
+    <div class='banner'>
+      <img class='banner_image' src='Picture7.png' alt="Welcome to Blackjack">
     </div>
-
   </header>
 
+  <aside>
+    
+    <br>
+    <br>
+    <br>
+      <div class = 'buttons' align = 'center'>
+        <button class = 'dealButton' id= 'deal_button' onclick='dealFunction()'> Deal </button>
+        <button id ='hit_button' onclick='hitFunction()'> Hit </button>
+        <button id = 'stand_button' onclick='standFunction()'> Stand </button>
+      </div>
+  </aside>
 
-  <!-- End of header -->
-  <div id='headings'>
-    <h4 id='playerscore'> Player Score: placeholder </h4>
-    <h4 id='computerscore'>Computer Score: placeholder </h4>
-  </div>
+  <summary align=center>  
+    <br>
+    <br>
+    <br>
+      <div class = 'score' align = 'center'>
+        
+        <h1 id='computerScore'> Score </h1>
+        <h1 id='playerScore'> Score </h1>
+      </div>
+  </summary>
 
-  <!-- Player vs Computer Heading -->
+
+  <article align = center>
+    <p>Computer Cards</p>
+
+      <div class = cardBoxes id = 'cardBox1'><img class = images height=160px id= 'image1' src=''> </div>
+   
+      <div class = cardBoxes id = 'cardBox2'><img class = images height=160px id= 'image2' src=''> </div>
+
+      
+      
+  </article>
 
 
+  <section align= center>
+    <p>Player Cards</p>
 
-  <section id='main' width = '300' height = '200'>
-    <img id="dealCards" src='player.displayCard()' >
+    <div class = cardBoxes id = 'cardBox3'><img class = images height = 160px id = 'image3' src=''> </div>
 
+      <div class = cardBoxes id = 'cardBox4'><img class = images height = 160px id = 'image4' src=''> </div>
+
+      <div class = cardBoxes id = 'cardBox5'><img class = images height = 160px id = 'image5' src=''> </div>
+
+    <div class = cardBoxes id = 'cardBox6'><img class = images height = 160px id = 'image6' src=''> </div>
+
+      <div class = cardBoxes id = 'cardBox7'><img class = images height = 160px id = 'image7' src=''> </div>
+    
   </section>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 
-
-
-  <article>
-    <div align='center'>
-      <button id = 'deal_button' onclick="dealButton()">Deal Card </button>
-      <button id = 'hit_button' onclick="hitButton()">Hit Card </button>
-      <button id = 'stand_button' onclick="standButton()">Stand Card </button>
-    </div>
-
-
-  </article>
-
-
-
-  <!-- End Heading--
-
-  <!-- Button -->
-
-<!--
-  <article>
-    <div align = 'center'>
-      <button type="button" id="deal_button" onclick="dealButton()"> Deal </button>
-      <button type='button' id="hit_button" onclick="hitButton()"> Hit </button>
-      <button type='button' id="stand_button" onclick="standButton()"> Stand </button>
-    </div>
-  </article>
-
--->
-
-
-
-
-
-
-
-
-<!-- FOOTER SECTION -->
-
-
-  <footer class='mainfooter'>
-    <p>&copy; | Created by C.Baadkar, S.Kim, B.White, K.Brown | 2018 </p>
+  <footer>
+    <h5>&copy; | Created by C.Baadkar, S.Kim, B.White, K.Brown | 2018 </h5>
   </footer>
+
+
+</div>
 </body>
 </html>
