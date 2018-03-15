@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <title>Blackjack</title>
   <link href="style.css" rel="stylesheet" type="text/css">
-  <script src= "blackjack.js"> </script>
-  <script type="text/javascript" src="Scripts/blackjack.js"></script>
+
   <script type="text/javascript" src="Scripts/card.js"></script>
   <script type="text/javascript" src="Scripts/deck.js"></script>
   <script type="text/javascript" src="Scripts/player.js"></script>
   <script type="text/javascript" src="Scripts/gameObject.js"></script>
+  <script type="text/javascript" src="Scripts/blackjack.js"></script>
 
 </head>
 
@@ -47,7 +47,7 @@
 
 
   <section id='main' width = '300' height = '200'>
-    <img id="dealCards" src='playingcard.png'>
+    <img id="dealCards" src='player.displayCard()' >
 
   </section>
 
@@ -65,9 +65,9 @@
 
   <article>
     <div align='center'>
-      <button id = 'deal_button' onclick='myFunction()'>Deal Card </button>
-      <button id = 'hit_button' onclick='()'>Hit Card </button>
-      <button id = 'stand_button' onclick='standFunction()'>Stand Card </button>
+      <button id = 'deal_button' onclick="dealButton()">Deal Card </button>
+      <button id = 'hit_button' onclick="hitButton()">Hit Card </button>
+      <button id = 'stand_button' onclick="standButton()">Stand Card </button>
     </div>
 
 
