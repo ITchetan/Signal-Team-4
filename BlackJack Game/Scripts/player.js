@@ -32,4 +32,6 @@ class Player {
     console.log(card.image)
     return String(cardImage)
   }
+
+
 }

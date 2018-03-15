@@ -15,7 +15,7 @@ function dealButton () {
   computer = new Player()
   newDeck = new Deck()
   for (var i = 1; i < 8; i++) {
-    document.getElementById('image' + i).src = ' '
+    document.getElementById('image' + i).src = ''
   }
   imageCounter = 5
 
@@ -24,6 +24,8 @@ function dealButton () {
   document.getElementById('image3').src = user.displayCard (card)
   var card = user.cardDraw(newDeck)
   document.getElementById('image4').src = user.displayCard (card)
+
+  user.handCount()
 }
 
 function standButton () {
