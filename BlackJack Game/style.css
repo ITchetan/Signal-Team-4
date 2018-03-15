@@ -1,29 +1,28 @@
-/* Main Page Set Up */
-html {
-  background: url("table.jpg");
+/* Class = . ID = # */
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+    background: url("table.jpg");
 }
 
 body {
-  margin:0;
-  padding:0;
-  font-family: 'Arial', serif;
-}
-nav {
-  background:white;
-
-}
-header{
-  border-color:white;
-  border-style:solid;
+  color:white;
+  font-size: 16px;
 }
 
-article{
-  background: url('wood.jpg');
-  font-color:;
+body > p {
+  color:white;
 }
 
+header, footer {
+    color: white;
+    clear: left;
+    text-align: center;
+  border-color: white;
+  border-style: 8px solid;
+}
 
-/* Create nav bar */
 .nav{
   background-color: #ffffff ; /*White*/
   color: #000000; /* Black */
@@ -51,88 +50,119 @@ article{
   font-size: 16px;
   font-weight: bold;
 }
+
 .banner {
   width:100%;
   display: block;
+  border-color: white;
 }
 
 .banner > .banner_image {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-
   display: block;
 }
 
-/* End of Nav Bar / Banner */
-
-/* Score Headings */
-#headings {
-  text-align:center;
-  display:inline;
-  font-color:white;
+aside {
+    float: left;
+    max-width: 160px;
+    max-height:100%
+    margin: 0;
+    padding: 1em;
 }
 
-#playerscore {
-  font-color:white;
-  font-size:16px;
-  float:left;
-  padding: 0px 0px 0px 50px ;
-}
-#computerscore {
-  font-color:white;
-  font-size:16px;
-  float:right;
-  padding: 0px 50px 0px 0px ;
+summary {
+    float: right;
+    max-width: 160px;
+    max-height:100%
+    margin: 0;
+    padding: 1em;
+    padding-right: 80px;
 }
 
-h4{
-  font-color: white;
+#playerScore{
+  margin-top: 200px;
+
 }
 
-#dealCards {
-    width: 10%;
-    padding: 50px 10px;
-    text-align: left;
-    margin-top: 20px;
-    display:none;
+aside h2 {
+  max-width: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial', serif;
+    font-size: 16px
+    }
+
+
+aside button {
+  text-align: center;
+    display: block;
+    padding: 10px, 20px, 10px, 20px;
+}
+
+article {
+    margin-right: 170px;
+    margin-right: 170px;
+    overflow: hidden;
+    color: white;
+    font-size: 16px
+
+}
+
+p {
+  color:green;
+  background-color: white;
+  font-size: 18px;
+}
+
+section {
+    margin-right: 170px;
+    margin-left:170px;
+    margin-top: -60px; 
+    padding: 1em;
+    overflow: hidden;
+    color: white;
+    font-size: 16px
 }
 
 
-
-section{
-  height:100px;
+.cardBoxes {
+  align-items: center;
+    display: inline-block;
+    width: 150px;
+    height: 190px;
+    margin: 10px;
 }
 
 
-
-
-/* Buttons */
 
 button {
+
   background-color:green;
   color: white; /* white text */
   border-color: white;
   border-style: solid 32px;
   padding: 15px 32px;
-  line-height: 50px;
+  line-height: 25px;
   text-align: center;
   text-decoration: none;
   cursor: pointer; /* pointer hand icon */
   display: inline-block;
   font-size: 24px;
   margin: 4px 2px;
-  width: 200px;
-  height: 100px;
+  width: 120px;
+  height: 80px;
   top: 10%;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   border-radius:50%;
 }
 
-
-#deal_button{
-  background: DodgerBlue;
-  color: #000000;
+#deal_button {
+  margin-bottom: 80px;
+  background-color: blue;
+  border-style: bold
+  border-color: black;
 }
 
 #deal_button:hover{
@@ -160,22 +190,20 @@ button {
   color: #000000;
 }
 
-/* End of Buttons */
-
-
-
-
-/* Footer */
-
-
-footer {
-  border-top: 1px solid grey;
-  text-align: centre;
-  font-size: 12px;
-  line-height: 8px;
-  margin-top: 4px;
-  color: #c1c1c1;
+.dealButton {
+  -webkit-animation: bounce .3s infinite alternate;
+  -moz-animation: bounce .3s infinite alternate;
+  animation: bounce .3s infinite alternate;
+  animation-iteration-count: 10;
+}
+@-webkit-keyframes bounce {
+  to { -webkit-transform: scale(1.2); }
+}
+@-moz-keyframes bounce {
+  to { -moz-transform: scale(1.2); }
+}
+@keyframes bounce {
+  to { transform: scale(1.2); }
 }
 
 
-/* End of Footer */
