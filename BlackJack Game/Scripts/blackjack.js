@@ -2,39 +2,35 @@
 var user
 var computer
 var newDeck
-
-function controller() {
-//Handles the game logic
-  //Creates deck and draw two cards to the player
-  deck.CreateDeck()
-  player.cardDraw(User)
-  player.cardDraw(User)
-  //Allows the player to draw cards as long as they haven't gone over 21
-  // or pressed stand. Once these conditions are false, ends the players turn
-  // while (user.handCount < 21 && standButton.pressed = false) {
-  //   if drawButton.pressed == true {
-  //     player.cardDraw(user)
-  //     player.handCountUpdate()
-  //     drawButton.pressed = false
-}
+var imageCounter = 5;
 
 function hitButton () {
-  user.cardDraw(newDeck)
+  var card = user.cardDraw(newDeck)
+  document.getElementById('image' + imageCounter).src = user.displayCard (card)
+  imageCounter++
 }
 
 function dealButton () {
   user = new Player()
   computer = new Player()
   newDeck = new Deck()
+  for (var i = 1; i < 8; i++) {
+    document.getElementById('image' + i).src = ' '
+  }
+  imageCounter = 5
 
   // console.log(deck.decklist)
-  user.cardDraw(newDeck)
-  user.cardDraw(newDeck)
+  var card = user.cardDraw(newDeck)
+  document.getElementById('image3').src = user.displayCard (card)
+  var card = user.cardDraw(newDeck)
+  document.getElementById('image4').src = user.displayCard (card)
 }
 
 function standButton () {
-  computer.cardDraw(newDeck)
-  computer.cardDraw(newDeck)
+  var card = computer.cardDraw(newDeck)
+  document.getElementById('image1').src = computer.displayCard (card)
+  var card = computer.cardDraw(newDeck)
+  document.getElementById('image2').src = computer.displayCard (card)
   // add compare score and winning screen
 }
 
