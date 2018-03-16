@@ -17,6 +17,7 @@ function dealButton () {
   for (var i = 1; i < 8; i++) {
     document.getElementById('image' + i).src = ''
   }
+  document.getElementById('computerScore').innerHTML = computer.handCount
   imageCounter = 5
   var card = user.cardDraw(newDeck)
   document.getElementById('image3').src = user.displayCard(card)
@@ -28,7 +29,7 @@ function dealButton () {
 function standButton () {
   var card = computer.cardDraw(newDeck)
   document.getElementById('image1').src = computer.displayCard(card)
-  var card = computer.cardDraw(newDeck)
+  card = computer.cardDraw(newDeck)
   document.getElementById('image2').src = computer.displayCard(card)
   // add compare score and winning screen
   document.getElementById('computerScore').innerHTML = computer.handCount
@@ -39,7 +40,7 @@ function compareScore() {
     var winner = "You win!!"
   }
   if (user.handCount == computer.handCount) {
-    var winner = "draw!!"
+    var winner = "Draw!"
   } else {
     var winner = "Computer wins!!"
   }
