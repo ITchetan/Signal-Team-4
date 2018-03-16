@@ -4,6 +4,7 @@ class Player {
     this.hand = []
     this.handCount = 0
     this.score = 0
+    //this.bust = False;
   }
 
   cardDraw (deck) {
@@ -15,7 +16,20 @@ class Player {
     deck.decklist.splice(randNum, 1)
     this.handCount += card.cardValue
     return card
+    if (this.handCount >21) {
+      compareScore();
+    }
   }
+
+  bustPlayer(){
+    if (this.handCount >21) {
+      return True;
+    }
+  }
+
+
+
+
 
   displayCard (card) {
     // returns a string which is the location of the card image
