@@ -13,32 +13,14 @@ class Player {
     var card = deck.decklist[randNum]
     this.hand.push(card)
     deck.decklist.splice(randNum, 1)
-    console.log(randNum)
-    console.log(this.hand)
-    
+    this.handCount += card.cardValue
     return card
   }
-  handSum () {  
-  for (var i in this.hand) {
-      this.handCount += this.hand[i].cardValue
-    }
-    // console.log(this.handCount)
-}
-  }
-
-
-
 
   displayCard (card) {
-    // Five empty boxes under each player on the screen
-    // when a card is draw, the empty box closes to the left is changed to display
-    // the card that was just drawn
-    // find the box on the left which is empty
-    // change it's display to the image fro each card
+    // returns a string which is the location of the card image
     var cardImage = card.image
     console.log(card.image)
     return String(cardImage)
   }
-
-
 }
