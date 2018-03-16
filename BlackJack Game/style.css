@@ -149,12 +149,11 @@ button {
   text-decoration: none;
   cursor: pointer; /* pointer hand icon */
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   margin: 4px 2px;
   width: 120px;
   height: 80px;
   top: 10%;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   border-radius:50%;
 }
 
@@ -163,6 +162,7 @@ button {
   background-color: blue;
   border-style: bold
   border-color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
 }
 
 #deal_button:hover{
@@ -172,7 +172,8 @@ button {
 
 #hit_button{
   background: #32CD32; /* LimeGreen */
-  color: #000000;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
 }
 
 #hit_button:hover{
@@ -181,8 +182,11 @@ button {
 }
 
 #stand_button{
+  margin-top: 15px;
   background: #FF0000;
-  color: #000000;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
 }
 
 #stand_button:hover{
@@ -204,6 +208,31 @@ button {
 }
 @keyframes bounce {
   to { transform: scale(1.2); }
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 84px;
+    color: white
+    font-weight: bold;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+   
 }
 
 
