@@ -4,7 +4,6 @@
     this.hand = []
     this.handCount = 0
     this.wins = 0
-    //this.bust = False;
   }
 
   cardDraw (deck) {
@@ -14,10 +13,9 @@
     var card = deck.decklist[randNum]
     this.hand.push(card)
     deck.decklist.splice(randNum, 1)
-    if (this.handCount > 10 && card.cardValue ==11)
-     {
-        card.cardValue = 1
-     }
+    if (this.handCount > 10 && card.cardValue ==11) {
+      card.cardValue = 1
+    }
 
     this.handCount += card.cardValue
 
@@ -27,26 +25,23 @@
     }
   }
 
-  bustPlayer(){
-    if (this.handCount >21) {
-      return True;
-    }
-  }
-
-
-
-
+  // bustPlayer(){
+  //   if (this.handCount >21) {
+  //     return True;
+  //   }
+  // }
 
   displayCard (card) {
     // returns a string which is the location of the card image
     var cardImage = card.image
-    console.log(card.image)
+    // console.log(card.image)
     return String(cardImage)
   }
+
   displayReset () {
     // returns a string which is the location of the card image
     var cardImage = ""
-    //console.log(card.image)
+    // console.log(card.image)
     return String(cardImage)
   }
 }

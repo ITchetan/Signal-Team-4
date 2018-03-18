@@ -1,15 +1,20 @@
+// Variables to be used when declaring new classes and resetting the program
 var user
-var coputer
+var computer
 var newDeck
 var imageCounter =  5
-var playerArray =[]
-var playerWinCounter = 0;
-var computerWinCounter = 0;
+
+// Variables used for storing data
+var playerArray = []
+var playerWinCounter = 0
+var computerWinCounter = 0
 var userWinCount
 
+// To be used for when the player wants to draw a new card
 function hitButton () {
   bleep.play()
   var card = user.cardDraw(newDeck)
+  // Displays the card on the html
   document.getElementById('image' + imageCounter).src = user.displayCard(card)
   imageCounter++
 
@@ -20,21 +25,22 @@ function hitButton () {
 
 }
 
+// To be used at the start of the game, gives two cards to the player and enables the hit and stand buttons
 function dealButton () {
   bleep.play()
   document.getElementById("deal_button").disabled = true;
   document.getElementById("hit_button").disabled = false;
   document.getElementById("stand_button").disabled = false;
+  // Decalring new instances of classes to reset the attributes so the game begins from fresh again
   user = new Player()
   user.name = "Chetan"
   computer = new Player()
   computer.name = "Dealer"
   newDeck = new Deck()
-  for (var i = 1; i < 8; i++) {
-    document.getElementById('image' + i).src = ''
-  }
+
   document.getElementById('computerScore').innerHTML = computer.handCount
   imageCounter = 5
+  // creates two new cards and displays them on the board
   var card = user.cardDraw(newDeck)
   document.getElementById('image3').src = user.displayCard(card)
   card = user.cardDraw(newDeck)
@@ -43,11 +49,17 @@ function dealButton () {
 
 }
 
+// To be used when the player is finished drawing Cards
+// Will give two cards to the computer and then compare the score of the player and computer
 function standButton () {
+
   bleep.play()
+  // Reenables the hit and stand buttons and diables the replay button
   document.getElementById("stand_button").disabled = true;
   document.getElementById("hit_button").disabled = true;
   document.getElementById("replay_button").disabled = false;
+
+  // Creates two new cards and adds them to the computer's hand and displays them on the board
   var card = computer.cardDraw(newDeck)
   document.getElementById('image1').src = computer.displayCard(card)
   card = computer.cardDraw(newDeck)
@@ -55,16 +67,10 @@ function standButton () {
   // add compare score and winning screen
   document.getElementById('computerScore').innerHTML = computer.handCount
   document.getElementById('bust').innerHTML = compareScore()
-  //storeData()
-
-  //document.getElementById("deal_button").disabled = false;
-
-  //document.getElementById("stand_button").disabled = true;
-
-
 }
 
-<<<<<<< HEAD
+// TO be used when the user wants to replay the game, resets the game board by
+// Removing all the card images
 function replayButton () {
   bleep.play()
   document.getElementById('image1').src = computer.displayReset()
@@ -74,46 +80,39 @@ function replayButton () {
   document.getElementById('image5').src = user.displayReset()
   document.getElementById('image6').src = user.displayReset()
   document.getElementById('image7').src = user.displayReset()
-  document.getElementById('bust').innerHTML =user.displayReset()
-  user.handCount =0
-  computer.handCount =0
+  document.getElementById('bust').innerHTML = user.displayReset()
+  user.handCount = 0
+  computer.handCount = 0
   document.getElementById('playerScore').innerHTML = user.handCount
   document.getElementById('computerScore').innerHTML = computer.handCount
   document.getElementById("deal_button").disabled = false;
   document.getElementById("hit_button").disabled = true;
   document.getElementById("stand_button").disabled = true;
   document.getElementById("replay_button").disabled = true;
-  //storeData()
 }
 
-
-function compareScore()
-{
+function compareScore () {
   var winner
-  if (user.handCount > 21)
-   {
-    computerWinCounter= computerWinCounter + 1
-    storeData(playerWinCounter,computerWinCounter);
+  if (user.handCount > 21) {
+    computerWinCounter = computerWinCounter + 1
+    storeData(playerWinCounter, computerWinCounter);
     winner = user.name + " Bust!!"
-    console.log(user.handCount)
-    console.log(computer.handCount)
     console.log(winner)
     document.getElementById("stand_button").disabled = true;
     document.getElementById("hit_button").disabled = true;
     document.getElementById("replay_button").disabled = false;
-    //return winner;
-   }
-  else if (user.handCount == computer.handCount)
-   {
+    //return winner
+  }
+  else if (user.handCount == computer.handCount) {
      winner = "Draw!!"
      console.log(user.handCount)
      console.log(computer.handCount)
      console.log(winner)
      //return winner
    }
-   else if (user.handCount < computer.handCount)
-   {
-     computerWinCounter= computerWinCounter + 1
+
+   else if (user.handCount < computer.handCount) {
+     computerWinCounter = computerWinCounter + 1
      storeData(playerWinCounter,computerWinCounter);
      winner = "Dealer wins!!"
      console.log(winner)
@@ -121,36 +120,13 @@ function compareScore()
      console.log(computer.handCount)
    }
    else {
-    playerWinCounter= playerWinCounter + 1
+    playerWinCounter = playerWinCounter + 1
     //console.log(playerWinCounter)
     storeData(playerWinCounter,computerWinCounter);
      winner = user.name + " wins!!"
    }
-return winner
-=======
-function compareScore() {
-  if (user.handCount > computer.handCount) {
-    var winner = "You win!!"
-  }
-  if (user.handCount == computer.handCount) {
-    var winner = "Draw!"
-  } else {
-    var winner = "Computer wins!!"
-  }
   return winner
->>>>>>> 084a6784690ea15cd16a8f98bca5bbeb288a1f63
 }
-
-function myFuntion() {
-  // Not sure if this stil does anything but im afraid to remove it
-    var x = document.getElementById("dealCards");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-  }
-
 
 function storeData(playerWinsCounter1,computerWinCounter1)
 {
