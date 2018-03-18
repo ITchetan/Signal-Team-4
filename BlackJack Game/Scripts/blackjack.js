@@ -33,6 +33,7 @@ function dealButton () {
   for (var i = 1; i < 8; i++) {
     document.getElementById('image' + i).src = ''
   }
+  document.getElementById('computerScore').innerHTML = computer.handCount
   imageCounter = 5
   var card = user.cardDraw(newDeck)
   document.getElementById('image3').src = user.displayCard(card)
@@ -49,7 +50,7 @@ function standButton () {
   document.getElementById("replay_button").disabled = false;
   var card = computer.cardDraw(newDeck)
   document.getElementById('image1').src = computer.displayCard(card)
-  var card = computer.cardDraw(newDeck)
+  card = computer.cardDraw(newDeck)
   document.getElementById('image2').src = computer.displayCard(card)
   // add compare score and winning screen
   document.getElementById('computerScore').innerHTML = computer.handCount
@@ -63,6 +64,7 @@ function standButton () {
 
 }
 
+<<<<<<< HEAD
 function replayButton () {
   bleep.play()
   document.getElementById('image1').src = computer.displayReset()
@@ -125,6 +127,18 @@ function compareScore()
      winner = user.name + " wins!!"
    }
 return winner
+=======
+function compareScore() {
+  if (user.handCount > computer.handCount) {
+    var winner = "You win!!"
+  }
+  if (user.handCount == computer.handCount) {
+    var winner = "Draw!"
+  } else {
+    var winner = "Computer wins!!"
+  }
+  return winner
+>>>>>>> 084a6784690ea15cd16a8f98bca5bbeb288a1f63
 }
 
 function myFuntion() {
