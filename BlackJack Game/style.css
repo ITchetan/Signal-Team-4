@@ -74,7 +74,7 @@ aside {
 
 summary {
     float: right;
-    max-width: 160px;
+    max-width: 200px;
     max-height:100%
     margin: 0;
     padding: 1em;
@@ -189,6 +189,15 @@ button {
   background-color: DarkRed;
   color: #000000;
 }
+
+#replay_button{
+  background: #32CD32; /* LimeGreen */
+  color: #000000;
+}
+
+#replay_button:hover{
+  background-color: OliveDrab;
+  color: #000000;
 
 .dealButton {
   -webkit-animation: bounce .3s infinite alternate;

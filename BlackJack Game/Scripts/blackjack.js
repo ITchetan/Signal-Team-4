@@ -1,24 +1,34 @@
 var user
-var computer
+var coputer
 var newDeck
-var imageCounter = 5;
-//var winner
+var imageCounter =  5
+var playerArray =[]
+var playerWinCounter = 0;
+var computerWinCounter = 0;
+var userWinCount
 
 function hitButton () {
+  bleep.play()
   var card = user.cardDraw(newDeck)
   document.getElementById('image' + imageCounter).src = user.displayCard(card)
   imageCounter++
+
   document.getElementById('playerScore').innerHTML = user.handCount
   if (user.handCount > 21) {
     document.getElementById('bust').innerHTML = compareScore()
   }
-  //document.getEleme ntById('bust').innerHTML = winner
+
 }
 
 function dealButton () {
+  bleep.play()
+  document.getElementById("deal_button").disabled = true;
+  document.getElementById("hit_button").disabled = false;
+  document.getElementById("stand_button").disabled = false;
   user = new Player()
-  user.name = "chetan"
+  user.name = "Chetan"
   computer = new Player()
+  computer.name = "Dealer"
   newDeck = new Deck()
   for (var i = 1; i < 8; i++) {
     document.getElementById('image' + i).src = ''
@@ -27,76 +37,94 @@ function dealButton () {
   var card = user.cardDraw(newDeck)
   document.getElementById('image3').src = user.displayCard(card)
   card = user.cardDraw(newDeck)
-
   document.getElementById('playerScore').innerHTML = user.handCount
   document.getElementById('image4').src = user.displayCard(card)
+
 }
 
 function standButton () {
+  bleep.play()
+  document.getElementById("stand_button").disabled = true;
+  document.getElementById("hit_button").disabled = true;
+  document.getElementById("replay_button").disabled = false;
   var card = computer.cardDraw(newDeck)
   document.getElementById('image1').src = computer.displayCard(card)
   var card = computer.cardDraw(newDeck)
   document.getElementById('image2').src = computer.displayCard(card)
   // add compare score and winning screen
-
   document.getElementById('computerScore').innerHTML = computer.handCount
   document.getElementById('bust').innerHTML = compareScore()
+  //storeData()
+
+  //document.getElementById("deal_button").disabled = false;
+
+  //document.getElementById("stand_button").disabled = true;
 
 
 }
 
-// function compareScore() {
-//   if (user.handCount > computer.handCount) {
-//     var winner = "You win"
-//     console.log(winner)
-//
-//   }
-//   else if (user.handCount == computer.handCount) {
-//     var winner = "Draw"
-//     console.log(winner)
-//   }
-//   else {
-//     var winner = "Comuprer wins"
-//     console.log(winner)
-//
-//   }
-//   return winner
-// }
+function replayButton () {
+  bleep.play()
+  document.getElementById('image1').src = computer.displayReset()
+  document.getElementById('image2').src = computer.displayReset()
+  document.getElementById('image3').src = user.displayReset()
+  document.getElementById('image4').src = user.displayReset()
+  document.getElementById('image5').src = user.displayReset()
+  document.getElementById('image6').src = user.displayReset()
+  document.getElementById('image7').src = user.displayReset()
+  document.getElementById('bust').innerHTML =user.displayReset()
+  user.handCount =0
+  computer.handCount =0
+  document.getElementById('playerScore').innerHTML = user.handCount
+  document.getElementById('computerScore').innerHTML = computer.handCount
+  document.getElementById("deal_button").disabled = false;
+  document.getElementById("hit_button").disabled = true;
+  document.getElementById("stand_button").disabled = true;
+  document.getElementById("replay_button").disabled = true;
+  //storeData()
+}
+
 
 function compareScore()
 {
+  var winner
   if (user.handCount > 21)
    {
-    var winner = user.name + " you bust"
+    computerWinCounter= computerWinCounter + 1
+    storeData(playerWinCounter,computerWinCounter);
+    winner = user.name + " Bust!!"
     console.log(user.handCount)
     console.log(computer.handCount)
     console.log(winner)
-    return winner;
+    document.getElementById("stand_button").disabled = true;
+    document.getElementById("hit_button").disabled = true;
+    document.getElementById("replay_button").disabled = false;
+    //return winner;
    }
   else if (user.handCount == computer.handCount)
    {
-     var winner = "draw"
+     winner = "Draw!!"
      console.log(user.handCount)
      console.log(computer.handCount)
      console.log(winner)
-     return winner
+     //return winner
    }
    else if (user.handCount < computer.handCount)
    {
-     var winner = "computer wins!!"
+     computerWinCounter= computerWinCounter + 1
+     storeData(playerWinCounter,computerWinCounter);
+     winner = "Dealer wins!!"
      console.log(winner)
      console.log(user.handCount)
      console.log(computer.handCount)
-     return winner
    }
    else {
-     var winner = user.name + " You win"
-     console.log(winner)
-     console.log(user.handCount)
-     console.log(computer.handCount)
-     return winner
+    playerWinCounter= playerWinCounter + 1
+    //console.log(playerWinCounter)
+    storeData(playerWinCounter,computerWinCounter);
+     winner = user.name + " wins!!"
    }
-
+return winner
 }
 
 function myFuntion() {
@@ -108,3 +136,23 @@ function myFuntion() {
         x.style.display = "block";
     }
   }
+
+
+function storeData(playerWinsCounter1,computerWinCounter1)
+{
+  var userName= "Chetan"
+  var userScore = playerWinsCounter1
+  var computerName = "Dealer"
+  var computerScore = computerWinCounter1
+  var playerArray = []
+
+  var plyObj = [{"playerName": userName, "playerScore": userScore},{"playerName":computerName,"playerScore": computerScore}];
+
+  playerArray.push(plyObj);
+  //localStorage.playerRecord= JSON.parse(plyObj);
+  localStorage.playerRecord = JSON.stringify(plyObj);
+  playerArray = JSON.parse(localStorage.playerRecord);
+  console.log(playerArray)
+  document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
+  document.getElementById('computerWins').innerHTML = playerArray[1].playerScore
+}

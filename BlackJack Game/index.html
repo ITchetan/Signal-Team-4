@@ -6,6 +6,10 @@
   <title>Blackjack</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 
+  <script>
+  var bleep = new Audio();
+  bleep.src = "beep.mp3";
+  </script>
   <script type="text/javascript" src="Scripts/card.js"></script>
   <script type="text/javascript" src="Scripts/deck.js"></script>
   <script type="text/javascript" src="Scripts/player.js"></script>
@@ -40,9 +44,10 @@
     <br>
     <br>
       <div class = 'buttons' align = 'center'>
-        <button class = 'dealButton' id= 'deal_button' onclick='dealButton()'> Deal </button>
-        <button id ='hit_button' onclick='hitButton()'> Hit </button>
-        <button id = 'stand_button' onclick='standButton()'> Stand </button>
+        <button class = 'dealButton'id= 'deal_button' onclick='dealButton()' > Deal </button>
+        <button id ='hit_button' onclick='hitButton()'disabled> Hit </button>
+        <button id = 'stand_button' onclick='standButton()'disabled >  Stand </button>
+        <button id = 'replay_button' onclick='replayButton()' disabled>  Replay </button>
       </div>
   </aside>
 
@@ -53,13 +58,16 @@
       <div class = 'score' align = 'center'>
 
         <h1 id='computerScore'> Score </h1>
+        <h1 id='computerWins'>Dealer</h1>
         <h1 id='playerScore'> Score </h1>
+        <h1 id='playerWins'> Player</h1>
+        <h1 id='bust'> winner </h1>
       </div>
   </summary>
 
 
   <article align = center>
-    <p>Computer Cards</p>
+    <p>Dealer Cards</p>
 
       <div class = cardBoxes id = 'cardBox1'><img class = images height=160px id= 'image1' src=''> </div>
 

@@ -1,9 +1,9 @@
-class Player {
+ class Player {
   constructor () {
     this.name = name
     this.hand = []
     this.handCount = 0
-    this.score = 0
+    this.wins = 0
     //this.bust = False;
   }
 
@@ -14,9 +14,15 @@ class Player {
     var card = deck.decklist[randNum]
     this.hand.push(card)
     deck.decklist.splice(randNum, 1)
+    if (this.handCount > 10 && card.cardValue ==11)
+     {
+        card.cardValue = 1
+     }
+
     this.handCount += card.cardValue
+
     return card
-    if (this.handCount >21) {
+    if (this.handCount > 21) {
       compareScore();
     }
   }
@@ -35,6 +41,12 @@ class Player {
     // returns a string which is the location of the card image
     var cardImage = card.image
     console.log(card.image)
+    return String(cardImage)
+  }
+  displayReset () {
+    // returns a string which is the location of the card image
+    var cardImage = ""
+    //console.log(card.image)
     return String(cardImage)
   }
 }
