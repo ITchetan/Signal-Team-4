@@ -65,6 +65,8 @@ header, footer {
 
 /* End of headings and banner */
 
+/* LHS Aside (contains buttons) */
+
 aside {
     float: left;
     max-width: 160px;
@@ -73,19 +75,9 @@ aside {
     padding: 1em;
 }
 
-summary {
-    float: right;
-    max-width: 200px;
-    max-height:100%
-    margin: 0;
-    padding: 1em;
-    padding-right: 80px;
-}
+/* End of LHS Aside (contains buttons) */
 
-#playerScore{
-  margin-top: 200px;
 
-}
 
 aside h2 {
   max-width: 100px;
@@ -102,6 +94,27 @@ aside button {
     padding: 10px, 20px, 10px, 20px;
 }
 
+/* RHS Aside (contains scores) */
+
+summary {
+    float: right;
+    max-width: 160px;
+    max-height:100%
+    margin: 0;
+    padding: 1em;
+    padding-right: 80px;
+}
+
+#computerWins{
+  margin-bottom: 120px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+/* End of RHS Aside (contains scores) */
+
 article {
     margin-right: 170px;
     margin-right: 170px;
@@ -112,15 +125,15 @@ article {
 }
 
 p {
-  color:green;
-  background-color: white;
+  color:white;
+  background-color: darkgreen;
   font-size: 18px;
 }
 
 section {
     margin-right: 170px;
     margin-left:170px;
-    margin-top: -60px;
+    margin-top: -60px; 
     padding: 1em;
     overflow: hidden;
     color: white;
@@ -137,6 +150,7 @@ section {
 }
 
 
+/* Buttons */
 
 button {
 
@@ -155,6 +169,7 @@ button {
   width: 120px;
   height: 80px;
   top: 10%;
+  
   border-radius:50%;
 }
 
@@ -204,12 +219,18 @@ button {
   background-color: OliveDrab;
   color: #000000;
 
+}
+
 .dealButton {
   -webkit-animation: bounce .3s infinite alternate;
   -moz-animation: bounce .3s infinite alternate;
   animation: bounce .3s infinite alternate;
   animation-iteration-count: 10;
 }
+
+
+
+
 @-webkit-keyframes bounce {
   to { -webkit-transform: scale(1.2); }
 }
@@ -219,6 +240,10 @@ button {
 @keyframes bounce {
   to { transform: scale(1.2); }
 }
+
+/* End of Buttons */
+
+/* Overlay CSS displaying winner of game */
 
 #text{
     position: absolute;
@@ -236,14 +261,18 @@ button {
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
-    top: 0;
+    top: 0; 
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; 
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-
+   
 }
+
+/* End of Overlay */
+
+/* Border fill divs */
 
 #top, #bottom, #left, #right {
   background: url('brownleather.jpeg');
@@ -255,7 +284,7 @@ button {
     }
     #left { left: 0; }
     #right { right: 0; }
-
+    
   #top, #bottom {
     left: 0; right: 0;
     height: 15px;
@@ -263,6 +292,7 @@ button {
     #top { top: 0; }
     #bottom { bottom: 0; }
 
+/* End Border Fill Divs */
 
 /* Instruction Drop Down Menu */
 
