@@ -15,16 +15,18 @@
 </head>
 
 
-<body>
 <div class = 'container'>
   <nav> 
     <ul class = 'nav'>
       <div class="logo"> 
-      S.18
       </div>
-      <li><a href="#" title="Home" target="_blank">Home</a></li>
-      <li><a href="#" title="Rules" target="_blank">About</a></li>
-      <li><a href="#" title="Instructions" target="_blank">Instructions</a></li>
+      <li><a href="index.html" title="Home">Home</a></li>
+        <div class='dropdown'>
+        <li>Instructions</li>
+          <div class ='dropdown-content'>
+            <h1 align = 'center'> The object for the player is to draw cards totaling closer to 21, without going over. The cards 2 through 10 are worth their face value. Kings, Queens and Jacks are each worth 10 and aces may be used as either 1 or 11. To achieve this first click the Deal button to be dealt two cards to the players hand. Click the Hit button for additional cards or click <strong> Stand </strong> if no further cards are required. If stand is selected the computer will be dealt two cards and the scores will be compared and the result will be displayed. </h1>
+          </div>
+        </div>
     </ul>
   </nav>
 
@@ -34,62 +36,117 @@
     </div>
   </header>
 
+  <!-- End of Navigation and Header -->
+
+  <!-- LHS Aside Forms and Buttons -->
+
   <aside>
+    <form align = 'center'>
+      <div>
+        <label id=playerLabel> Player Name </label>
+        <input id = "playerName" type = "Text" name = "firstName" placeholder = "Enter Player Name">
+      </div>
+    </form>
+
     
     <br>
     <br>
     <br>
       <div class = 'buttons' align = 'center'>
-        <button class = 'dealButton' id= 'deal_button' onclick='dealFunction()'> Deal </button>
-        <button id ='hit_button' onclick='hitFunction()'> Hit </button>
-        <button id = 'stand_button' onclick='standFunction()'> Stand </button>
+        <button class = 'dealButton' id= 'deal_button' onclick='dealButton()'> Deal </button>
+        <button id ='hit_button' onclick='hitButton()'> Hit </button>
+        <button id = 'stand_button' onclick='standButton()'> Stand </button>
+      </div>
+      <div id='overlay' onclick='off()'>
+        <div id='text'>""</div>
       </div>
   </aside>
 
-  <summary align=center>  
-    <br>
-    <br>
-    <br>
-      <div class = 'score' align = 'center'>
-        
-        <h1 id='computerScore'> Score </h1>
-        <h1 id='playerScore'> Score </h1>
-      </div>
-  </summary>
+  <!-- End of LHS Aside Forms and Buttons -->
+  <!-- Main -->
+
+  <main>
+    <div class ='mainPage' >
+
+      <!-- Summary = RHS aside with score display -->
+
+      <summary >  
+        <br>
+        <br>
+        <br>
+          <div class = 'score' align = 'center'>
+            <h4 id=> Dealers Score </h4>
+            <h1 id='computerScore'> Score </h1>
+            <h4 id=> Dealers Wins </h4>
+            <h1 id='dealersWins'> Wins </h1>
+            <h4> Players Score </h4>
+            <h1 id='playerScore'> Score </h1>
+            <h4 id=> Players Wins </h4>
+            <h1 id='playerWins'> Wins </h1>
+            
+
+          </div>
+      </summary>
+
+      <!--  End Summary = RHS aside with score display -->
+
+      <!-- Article contains main cardboxes -->
 
 
-  <article align = center>
-    <p>Dealer Cards</p>
+      <article align = center>
+        <p>Dealers Cards</p>
 
-      <div class = cardBoxes id = 'cardBox1'><img class = images height=160px id= 'image1' src=''> </div>
+          <div class = cardBoxes id = 'cardBox1'><img class = images height=160px id= 'image1' src=''> </div>
    
-      <div class = cardBoxes id = 'cardBox2'><img class = images height=160px id= 'image2' src=''> </div>
+          <div class = cardBoxes id = 'cardBox2'><img class = images height=160px id= 'image2' src=''> </div>
 
-      
-      
-  </article>
+      </article>
 
-
-  <section align= center>
-    <p>Player Cards</p>
-
-    <div class = cardBoxes id = 'cardBox3'><img class = images height = 160px id = 'image3' src=''> </div>
-
-      <div class = cardBoxes id = 'cardBox4'><img class = images height = 160px id = 'image4' src=''> </div>
-
-      <div class = cardBoxes id = 'cardBox5'><img class = images height = 160px id = 'image5' src=''> </div>
-
-    <div class = cardBoxes id = 'cardBox6'><img class = images height = 160px id = 'image6' src=''> </div>
-
-      <div class = cardBoxes id = 'cardBox7'><img class = images height = 160px id = 'image7' src=''> </div>
     
-  </section>
 
+
+      <section align= center>
+        <p>Player Cards</p>
+
+        <div class = cardBoxes id = 'cardBox3'><img class = images height = 160px id = 'image3' src=''> </div>
+
+          <div class = cardBoxes id = 'cardBox4'><img class = images height = 160px id = 'image4' src=''> </div>
+
+          <div class = cardBoxes id = 'cardBox5'><img class = images height = 160px id = 'image5' src=''> </div>
+
+        <div class = cardBoxes id = 'cardBox6'><img class = images height = 160px id = 'image6' src=''> </div>
+
+          <div class = cardBoxes id = 'cardBox7'><img class = images height = 160px id = 'image7' src=''> </div>
+    
+      </section>
+
+      <!-- End of Article contains main cardboxes -->
+
+
+    </div>
+
+    <!-- End of Main -->
+  </main>
+
+  
+
+
+  <!-- Footer -->
 
   <footer>
     <h5>&copy; | Created by C.Baadkar, S.Kim, B.White, K.Brown | 2018 </h5>
   </footer>
 
+  <!-- End of Footer -->
+
+  <!-- divs for the border -->
+
+  <div id="left"></div>
+  <div id="right"></div>
+  <div id="top"></div>
+  <div id="bottom"></div>
+
+  <!-- divs for the border -->
 
 </div>
 </body>
