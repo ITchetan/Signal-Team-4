@@ -1,10 +1,11 @@
 class Card {
-
-  constructor (value, suit) {
-    var suits = ['Spades', 'Clubs', 'Diamonds', 'Hearts']
-    var values = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King']
+  constructor (value, suit, cardValue) {
+    var suits = ['spades', 'clubs', 'diamonds', 'hearts']
+    var values = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king']
+    var cardValues = [11,2,3,4,5,6,7,8,9,10,10,10,10]
     this.value = values[value]
     this.suit = suits[suit]
-    //image;
+    this.image = 'Images/Cards/' + this.value + '_of_' + this.suit + '.svg'
+    this.cardValue = cardValues[cardValue]
   }
 }

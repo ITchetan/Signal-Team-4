@@ -5,16 +5,20 @@
   <meta charset="utf-8">
   <title>Blackjack</title>
   <link href="style.css" rel="stylesheet" type="text/css">
-  <script src= "blackjack.js"> </script>
-  <script type="text/javascript" src="Scripts/blackjack.js"></script>
+
+  <script>
+  var bleep = new Audio();
+  bleep.src = "beep.mp3";
+  </script>
   <script type="text/javascript" src="Scripts/card.js"></script>
   <script type="text/javascript" src="Scripts/deck.js"></script>
   <script type="text/javascript" src="Scripts/player.js"></script>
-  <script type="text/javascript" src="Scripts/gameObject.js"></script>
+  <script type="text/javascript" src="Scripts/blackjack.js"></script>
 
 </head>
 
 
+<<<<<<< HEAD
 <div class = 'container'>
   <nav> 
     <ul class = 'nav'>
@@ -27,6 +31,18 @@
             <h1 align = 'center'> The object for the player is to draw cards totaling closer to 21, without going over. The cards 2 through 10 are worth their face value. Kings, Queens and Jacks are each worth 10 and aces may be used as either 1 or 11. To achieve this first click the Deal button to be dealt two cards to the players hand. Click the Hit button for additional cards or click <strong> Stand </strong> if no further cards are required. If stand is selected the computer will be dealt two cards and the scores will be compared and the result will be displayed. </h1>
           </div>
         </div>
+=======
+<body>
+<div class = 'container'>
+  <nav>
+    <ul class = 'nav'>
+      <div class="logo">
+      SIGNAL TEAM 4
+      </div>
+      <li><a href="#" title="Home" target="_blank">Home</a></li>
+      <li><a href="#" title="About" target="_blank">About</a></li>
+      <li><a href="#" title="Instructions" target="_blank">Instructions</a></li>
+>>>>>>> master
     </ul>
   </nav>
 
@@ -36,6 +52,7 @@
     </div>
   </header>
 
+<<<<<<< HEAD
   <!-- End of Navigation and Header -->
 
   <!-- LHS Aside Forms and Buttons -->
@@ -87,6 +104,46 @@
 
             <h4 id=> Dealer Wins </h4>
             <h3 id='dealerWins'> Wins </h3>
+=======
+  <aside>
+
+    <br>
+    <br>
+    <br>
+      <div class = 'buttons' align = 'center'>
+        <button class = 'dealButton'id= 'deal_button' onclick='dealButton()' > Deal </button>
+        <button id ='hit_button' onclick='hitButton()'disabled> Hit </button>
+        <button id = 'stand_button' onclick='standButton()'disabled >  Stand </button>
+        <button id = 'replay_button' onclick='replayButton()' disabled>  Replay </button>
+      </div>
+      <div id='overlay' onclick='off()'>
+        <div id='text'>""</div>
+      </div>
+  </aside>
+
+  <summary align=center>
+    <br>
+    <br>
+    <br>
+      <div class = 'score' align = 'center'>
+
+        <h1 id='computerScore'> Score </h1>
+        <h1 id='computerWins'>Dealer</h1>
+        <h1 id='playerScore'> Score </h1>
+        <h1 id='playerWins'> Player</h1>
+        <h1 id='bust'> winner </h1>
+      </div>
+  </summary>
+
+
+  <article align = center>
+    <p>Dealer Cards</p>
+
+      <div class = cardBoxes id = 'cardBox1'><img class = images height=160px id= 'image1' src=''> </div>
+
+      <div class = cardBoxes id = 'cardBox2'><img class = images height=160px id= 'image2' src=''> </div>
+
+>>>>>>> master
 
 
             <h4> <u>Player Score</u> </h4>
@@ -96,6 +153,7 @@
             <h3 id='playerWins'> Wins </h3>
             
 
+<<<<<<< HEAD
           </div>
       </summary>
 
@@ -126,22 +184,53 @@
           <div class = cardBoxes id = 'cardBox5'><img class = images height = 160px id = 'image5' src=''> </div>
 
         <div class = cardBoxes id = 'cardBox6'><img class = images height = 160px id = 'image6' src=''> </div>
+=======
+  <section align= center>
+    <p>Player Cards</p>
+
+    <div class = cardBoxes id = 'cardBox3'><img class = images height = 160px id = 'image3' src=''> </div>
+
+      <div class = cardBoxes id = 'cardBox4'><img class = images height = 160px id = 'image4' src=''> </div>
+
+      <div class = cardBoxes id = 'cardBox5'><img class = images height = 160px id = 'image5' src=''> </div>
+
+    <div class = cardBoxes id = 'cardBox6'><img class = images height = 160px id = 'image6' src=''> </div>
+
+      <div class = cardBoxes id = 'cardBox7'><img class = images height = 160px id = 'image7' src=''> </div>
+
+  </section>
+>>>>>>> master
 
           <div class = cardBoxes id = 'cardBox7'><img class = images height = 160px id = 'image7' src=''> </div>
     
       </section>
 
+<<<<<<< HEAD
       <!-- End of Article contains main cardboxes -->
+=======
+  <footer>
+    <h5>&copy; | Created by C.Baadkar, S.Kim, B.White, K.Brown | 2018 </h5>
+  </footer>
+>>>>>>> master
 
+  <div id="left"></div>
+  <div id="right"></div>
+  <div id="top"></div>
+  <div id="bottom"></div>
 
+<<<<<<< HEAD
     </div>
 
     <!-- End of Main -->
   </main>
 
   
+=======
+>>>>>>> master
 
+</div>
 
+<<<<<<< HEAD
   <!-- Footer -->
 
   <footer>
@@ -160,5 +249,7 @@
   <!-- divs for the border -->
 
 </div>
+=======
+>>>>>>> master
 </body>
 </html>
