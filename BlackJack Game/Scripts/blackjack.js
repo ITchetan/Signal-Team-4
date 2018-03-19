@@ -4,6 +4,7 @@ var computer
 var newDeck
 var imageCounter =  5
 
+
 // Variables used for storing data
 var playerArray = []
 var playerWinCounter = 0
@@ -27,6 +28,8 @@ function hitButton () {
 
 // To be used at the start of the game, gives two cards to the player and enables the hit and stand buttons
 function dealButton () {
+  document.getElementById('deal_button').style.display = 'none';
+  document.getElementById('replay_button').style.display = 'block';
   bleep.play()
   document.getElementById("deal_button").disabled = true;
   document.getElementById("hit_button").disabled = false;
@@ -73,6 +76,9 @@ function standButton () {
 // Removing all the card images
 function replayButton () {
   bleep.play()
+  document.getElementById('replay_button').style.display = 'none';
+  document.getElementById('deal_button').style.display = 'block';
+
   document.getElementById('image1').src = computer.displayReset()
   document.getElementById('image2').src = computer.displayReset()
   document.getElementById('image3').src = user.displayReset()

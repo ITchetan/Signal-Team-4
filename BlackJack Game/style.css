@@ -195,8 +195,10 @@ button {
 }
 
 #replay_button{
+  margin-bottom: 80px;
   background: #32CD32; /* LimeGreen */
   color: #000000;
+  display: none;
 }
 
 #replay_button:hover{
