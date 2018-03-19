@@ -148,7 +148,7 @@ section {
 .cardBoxes {
   align-items: center;
     display: inline-block;
-    width: 150px;
+    width: 120px;
     height: 190px;
     margin: 10px;
 }
@@ -219,11 +219,12 @@ button {
   background: gold;
   color: white;
   text-align: center;
+  font-size: 20px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
 
 }
 #replay_button:hover{
-  background-color: OliveDrab;
+  background-color: orange;
   color: #000000;
 
 }
