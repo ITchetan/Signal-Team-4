@@ -27,7 +27,7 @@ header, footer {
   background-color: #ffffff ; /*White*/
   color: #000000; /* Black */
   list-style: none;
-  text-align: right;
+  text-align: left;
   padding: 10px 0 10px 0;
 }
 .nav > li {
@@ -43,12 +43,8 @@ header, footer {
   color: #c1c1c1;
 }
 
-.logo{
-  color: #000000;
-  float: left;
-  padding-left: 25px;
-  font-size: 16px;
-  font-weight: bold;
+.dropdown{
+  font-size: 12px;
 }
 
 .banner {
