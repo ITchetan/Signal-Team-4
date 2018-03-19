@@ -9,6 +9,7 @@ div.container {
 body {
   color:white;
   font-size: 16px;
+  font-family: 'Arial', serif;
 }
 
 body > p {
@@ -23,11 +24,13 @@ header, footer {
   border-style: 8px solid;
 }
 
+/* Navigation bar */
+
 .nav{
   background-color: #ffffff ; /*White*/
   color: #000000; /* Black */
   list-style: none;
-  text-align: right;
+  text-align: left;
   padding: 10px 0 10px 0;
 }
 .nav > li {
@@ -43,12 +46,8 @@ header, footer {
   color: #c1c1c1;
 }
 
-.logo{
-  color: #000000;
-  float: left;
-  padding-left: 25px;
-  font-size: 16px;
-  font-weight: bold;
+.dropdown{
+  font-size: 12px;
 }
 
 .banner {
@@ -58,11 +57,15 @@ header, footer {
 }
 
 .banner > .banner_image {
-  width: 80%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
+
+/* End of headings and banner */
+
+/* LHS Aside (contains buttons) */
 
 aside {
     float: left;
@@ -72,19 +75,9 @@ aside {
     padding: 1em;
 }
 
-summary {
-    float: right;
-    max-width: 200px;
-    max-height:100%
-    margin: 0;
-    padding: 1em;
-    padding-right: 80px;
-}
+/* End of LHS Aside (contains buttons) */
 
-#playerScore{
-  margin-top: 200px;
 
-}
 
 aside h2 {
   max-width: 100px;
@@ -101,6 +94,31 @@ aside button {
     padding: 10px, 20px, 10px, 20px;
 }
 
+/* RHS Aside (contains scores) */
+
+summary {
+    float: right;
+    max-width: 160px;
+    max-height:100%
+    margin: 0;
+    padding: 1em;
+    padding-right: 80px;
+}
+
+#computerWins{
+  margin-bottom: 180px;
+}
+
+#bust{
+  margin-top: 50px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+/* End of RHS Aside (contains scores) */
+
 article {
     margin-right: 170px;
     margin-right: 170px;
@@ -111,15 +129,15 @@ article {
 }
 
 p {
-  color:green;
-  background-color: white;
+  color:white;
+  background-color: darkgreen;
   font-size: 18px;
 }
 
 section {
     margin-right: 170px;
     margin-left:170px;
-    margin-top: -60px;
+    margin-top: -60px; 
     padding: 1em;
     overflow: hidden;
     color: white;
@@ -130,12 +148,13 @@ section {
 .cardBoxes {
   align-items: center;
     display: inline-block;
-    width: 150px;
+    width: 120px;
     height: 190px;
     margin: 10px;
 }
 
 
+/* Buttons */
 
 button {
 
@@ -154,6 +173,7 @@ button {
   width: 120px;
   height: 80px;
   top: 10%;
+  
   border-radius:50%;
 }
 
@@ -195,15 +215,21 @@ button {
 }
 
 #replay_button{
-  margin-bottom: 80px;
-  background: #32CD32; /* LimeGreen */
-  color: #000000;
-  display: none;
-}
 
+  margin-top: 15px;
+  background: gold;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+
+
+}
 #replay_button:hover{
-  background-color: OliveDrab;
+  background-color: orange;
   color: #000000;
+
+}
 
 .dealButton {
   -webkit-animation: bounce .3s infinite alternate;
@@ -211,6 +237,10 @@ button {
   animation: bounce .3s infinite alternate;
   animation-iteration-count: 10;
 }
+
+
+
+
 @-webkit-keyframes bounce {
   to { -webkit-transform: scale(1.2); }
 }
@@ -220,6 +250,10 @@ button {
 @keyframes bounce {
   to { transform: scale(1.2); }
 }
+
+/* End of Buttons */
+
+/* Overlay CSS displaying winner of game */
 
 #text{
     position: absolute;
@@ -237,14 +271,18 @@ button {
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
-    top: 0;
+    top: 0; 
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; 
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+   
 }
+
+/* End of Overlay */
+
+/* Border fill divs */
 
 #top, #bottom, #left, #right {
   background: url('brownleather.jpeg');
@@ -256,10 +294,40 @@ button {
     }
     #left { left: 0; }
     #right { right: 0; }
-
+    
   #top, #bottom {
     left: 0; right: 0;
     height: 15px;
     }
     #top { top: 0; }
     #bottom { bottom: 0; }
+
+/* End Border Fill Divs */
+
+/* Instruction Drop Down Menu */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 500px;
+
+    padding: 18px 16px;
+   
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    font-size: 8px;
+    background-color: white;
+}
+
+
+/* End of instruction drop down */ 
