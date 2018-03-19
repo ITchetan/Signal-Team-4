@@ -257,3 +257,32 @@ button {
     }
     #top { top: 0; }
     #bottom { bottom: 0; }
+
+
+/* Instruction Drop Down Menu */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 500px;
+
+    padding: 18px 16px;
+   
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    font-size: 8px;
+    background-color: white;
+}
+
+
+/* End of instruction drop down */ 
