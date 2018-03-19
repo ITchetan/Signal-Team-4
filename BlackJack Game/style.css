@@ -9,6 +9,7 @@ div.container {
 body {
   color:white;
   font-size: 16px;
+  font-family: 'Arial', serif;
 }
 
 body > p {
@@ -22,6 +23,8 @@ header, footer {
   border-color: white;
   border-style: 8px solid;
 }
+
+/* Navigation bar */
 
 .nav{
   background-color: #ffffff ; /*White*/
@@ -59,6 +62,8 @@ header, footer {
   margin-right: auto;
   display: block;
 }
+
+/* End of headings and banner */
 
 aside {
     float: left;
