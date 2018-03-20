@@ -3,6 +3,8 @@ var user
 var computer
 var newDeck
 var imageCounter =  5
+var data1
+var data2
 
 
 // Variables used for storing data
@@ -37,28 +39,52 @@ function hitButton () {
 
 // To be used at the start of the game, gives two cards to the player and enables the hit and stand buttons
 function dealButton () {
-  document.getElementById('deal_button').style.display = 'none';
-  document.getElementById('replay_button').style.display = 'block';
-  bleep.play()
-  document.getElementById("deal_button").disabled = true;
-  document.getElementById("hit_button").disabled = false;
-  document.getElementById("stand_button").disabled = false;
-  // Decalring new instances of classes to reset the attributes so the game begins from fresh again
-  user = new Player()
-
-
 var str = (document.getElementById("playerName").value);
-user.name = str.toUpperCase();
+  if (str =="") {
+    window.alert("Please enter your name")
+  } else {
+    document.getElementById('deal_button').style.display = 'none';
+    document.getElementById('replay_button').style.display = 'block';
+    bleep.play()
+    document.getElementById("deal_button").disabled = true;
+    document.getElementById("hit_button").disabled = false;
+    document.getElementById("stand_button").disabled = false;
+    // Decalring new instances of classes to reset the attributes so the game begins from fresh again
+    user = new Player()
 
-if (firstTime) {
 
-  recallData(user.name)
-}
-  //user.name = document.getElementById("playerName").value
-  //recallData(user.name)
-  computer = new Player()
-  computer.name = "Dealer"
-  newDeck = new Deck()
+  //var str = (document.getElementById("playerName").value);
+  user.name = str.toUpperCase();
+
+
+    //recallData(user.name)
+  //  recallScore()
+
+    //user.name = document.getElementById("playerName").value
+    //recallData(user.name)
+    computer = new Player()
+    computer.name = "Dealer"
+    newDeck = new Deck()
+
+    if (firstTime) {
+      firstTime = false
+      if (localStorage.getItem(user.name) === null)
+        {
+            localStorage.setItem(user.name,0)
+            localStorage.setItem(computer.name,0)
+        }
+      data1 = localStorage.getItem(user.name)
+      data1 = parseInt(data1)
+      window.alert(user.name + " your score is " + data1)
+      data2 = localStorage.getItem(computer.name)
+      data2 = parseInt(data2)
+
+      console.log(data1)
+      console.log(data2)
+
+  }
+
+  }
 
   document.getElementById('computerScore').innerHTML = computer.handCount
   imageCounter = 5
@@ -90,6 +116,13 @@ function standButton () {
   document.getElementById('computerScore').innerHTML = computer.handCount
     document.getElementById('overlay').style.display = "block"
   document.getElementById('bust').innerHTML = compareScore()
+
+  data1 = data1 + playerWinCounter
+  data2 = data2 + computerWinCounter
+  console.log(data1)
+  console.log(data2)
+  localStorage.setItem(user.name,data1)
+  localStorage.setItem(computer.name,data2)
 
 
 
@@ -128,11 +161,34 @@ function replayButton () {
   document.getElementById("replay_button").disabled = true;
 }
 
+function quitButton(){
+
+  //localStorage.setItem(user.name,playerWinCounter)
+  //localStorage.setItem(computer.name,computerWinCounter)
+  data1 = data1 + playerWinCounter
+  data2 = data2 + computerWinCounter
+  console.log(data1)
+  console.log(data2)
+  localStorage.setItem(user.name,data1)
+  localStorage.setItem(computer.name,data2)
+  window.close()
+
+
+
+}
+
+
+
+
 function compareScore () {
   var winner
   if (user.handCount > 21) {
+
     computerWinCounter = computerWinCounter + 1
-    storeData(playerWinCounter, computerWinCounter);
+    document.getElementById('playerWins').innerHTML = playerWinCounter
+    document.getElementById('computerWins').innerHTML = computerWinCounter
+    //storeData(playerWinCounter, computerWinCounter);
+
     winner = user.name + " Bust!!"
     console.log(winner)
     document.getElementById("stand_button").disabled = true;
@@ -150,7 +206,9 @@ function compareScore () {
 
    else if (user.handCount < computer.handCount) {
      computerWinCounter = computerWinCounter + 1
-     storeData(playerWinCounter,computerWinCounter);
+     document.getElementById('playerWins').innerHTML = playerWinCounter
+     document.getElementById('computerWins').innerHTML = computerWinCounter
+     //storeData(playerWinCounter,computerWinCounter);
      winner = "Dealer wins!!"
      console.log(winner)
      console.log(user.handCount)
@@ -159,7 +217,9 @@ function compareScore () {
    else {
     playerWinCounter = playerWinCounter + 1
     //console.log(playerWinCounter)
-    storeData(playerWinCounter,computerWinCounter);
+    document.getElementById('playerWins').innerHTML = playerWinCounter
+    document.getElementById('computerWins').innerHTML = computerWinCounter
+    //storeData(playerWinCounter,computerWinCounter);
      winner = user.name + " wins!!"
    }
   return winner
@@ -172,33 +232,70 @@ function storeData(playerWinsCounter1,computerWinCounter1)
   var computerName = "Dealer"
   var computerScore = computerWinCounter1
   //var playerArray = []
+  localStorage.setItem(user.name,playerWinsCounter1)
+  localStorage.setItem(computerName,computerWinCounter1)
 
 
-  var plyObj = [{"playerName": userName, "playerScore": userScore},{"playerName":computerName,"playerScore": computerScore}];
-  playerArray.push(plyObj);
-  localStorage.playerRecord = JSON.stringify(plyObj);
-  playerArray = JSON.parse(localStorage.playerRecord);
-  console.log(playerArray)
-  document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
-  document.getElementById('computerWins').innerHTML = playerArray[1].playerScore
+
+
+  // var plyObj = [{"playerName": userName, "playerScore": userScore},{"playerName":computerName,"playerScore": computerScore}];
+  // playerArray.push(plyObj);
+  // localStorage.playerRecord = JSON.stringify(plyObj);
+  // playerArray = JSON.parse(localStorage.playerRecord);
+  // console.log(playerArray)
+  // document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
+  // document.getElementById('computerWins').innerHTML = playerArray[1].playerScore
+  localStorage.setItem(user.name,playerWinsCounter1)
+  localStorage.setItem(computerName,computerWinCounter1)
+  //localStorage.setItem('dude', 'joe')
+  // localStorage.setItem('chet', 'yes')
+  // var test = localStorage.getItem('dude')
+  // var test1 = localStorage.getItem('chet')
+  // var test1 = localStorage.getItem(user.name)
+  // var test2 = localStorage.getItem(computerName)
+  // // console.log(test)
+  // console.log(test1)
+  // console.log(test2)
+
+
 }
 
-function recallData(userName)
-    {
-      firstTime = false;
-      playerArray = JSON.parse(localStorage.playerRecord);
-        if (playerArray[0].playerName == userName)
-        {
-          window.alert("Last top score : " +userName +' '+ playerArray[0].playerScore + " Dealer "+ playerArray[1].playerScore  )
-            document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
-          }
-        else
-        {
+// function recallData(userName)
+//     {
+//       firstTime = false;
+//       playerArray = JSON.parse(localStorage.playerRecord);
+//         if (playerArray[0].playerName == userName)
+//         {
+//           window.alert("Last top score : " +userName +' '+ playerArray[0].playerScore + " Dealer "+ playerArray[1].playerScore  )
+//           document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
+//
+//           }
+//         else
+//         {
+//
+//         window.alert("No data avaiable. Please continue playing")
+//
+//         }
+//    }
 
-        window.alert("No data avaiable. Please continue playing")
+function recallScore()
+{
+  var computerName = "Dealer"
+  var test1 = localStorage.getItem(user.name)
+  var test2 = localStorage.getItem(computerName)
 
-        }
-   }
+  console.log(test1)
+  console.log(test2)
+  // var reset1 = localStorage.setItem(user.name, 0)
+  // var reset2 = localStorage.setItem(computerName,0)
+  //console.log(reset1)
+  //console.log(reset2)
+
+
+}
+
+
+
 
    function userName()
    {
