@@ -32,6 +32,7 @@ header, footer {
   list-style: none;
   text-align: left;
   padding: 10px 0 10px 0;
+  margin-top: -5px;
 }
 .nav > li {
   display: inline-block;
@@ -54,6 +55,8 @@ header, footer {
   width:100%;
   display: block;
   border-color: white;
+  margin-top: -15px;
+  margin-bottom: -15px;
 }
 
 .banner > .banner_image {
@@ -64,11 +67,13 @@ header, footer {
 }
 
 #playerScore{
-  margin-top:-10px;
+  margin-top:-12px;
+  margin-bottom: 10px;
 }
 
 #computerScore{
-  margin-top:-10px;
+  margin-top:-12px;
+  margin-bottom: 10px;
 }
 
 /* End of headings and banner */
@@ -156,9 +161,11 @@ section {
 .cardBoxes {
   align-items: center;
     display: inline-block;
-    width: 120px;
-    height: 190px;
+    width: 110px;
+    height: 185px;
     margin: 10px;
+    margin-top: -10px;
+
 }
 
 
