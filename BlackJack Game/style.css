@@ -63,6 +63,14 @@ header, footer {
   display: block;
 }
 
+#playerScore{
+  margin-top:-10px;
+}
+
+#computerScore{
+  margin-top:-10px;
+}
+
 /* End of headings and banner */
 
 /* LHS Aside (contains buttons) */
