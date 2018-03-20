@@ -117,13 +117,19 @@ function standButton () {
     document.getElementById('overlay').style.display = "block"
   document.getElementById('bust').innerHTML = compareScore()
 
-  data1 = data1 + playerWinCounter
-  data2 = data2 + computerWinCounter
-  console.log(data1)
-  console.log(data2)
-  localStorage.setItem(user.name,data1)
-  localStorage.setItem(computer.name,data2)
+  // data1 = data1 + playerWinCounter
+  // data2 = data2 + computerWinCounter
+  // console.log(data1)
+  // console.log(data2)
+  // localStorage.setItem(user.name,data1)
+  // localStorage.setItem(computer.name,data2)
 
+  if ((user.handCount > computer.handCount) && (user.handCount < 22)) {
+    data1 += 1
+    localStorage.setItem(user.name,data1)
+    console.log(data1)
+
+}
 
 
 }
@@ -161,21 +167,21 @@ function replayButton () {
   document.getElementById("replay_button").disabled = true;
 }
 
-function quitButton(){
-
-  //localStorage.setItem(user.name,playerWinCounter)
-  //localStorage.setItem(computer.name,computerWinCounter)
-  data1 = data1 + playerWinCounter
-  data2 = data2 + computerWinCounter
-  console.log(data1)
-  console.log(data2)
-  localStorage.setItem(user.name,data1)
-  localStorage.setItem(computer.name,data2)
-  window.close()
-
-
-
-}
+// function quitButton(){
+//
+//   //localStorage.setItem(user.name,playerWinCounter)
+//   //localStorage.setItem(computer.name,computerWinCounter)
+//   data1 = data1 + playerWinCounter
+//   data2 = data2 + computerWinCounter
+//   console.log(data1)
+//   console.log(data2)
+//   localStorage.setItem(user.name,data1)
+//   localStorage.setItem(computer.name,data2)
+//   window.close()
+//
+//
+//
+// }
 
 
 
