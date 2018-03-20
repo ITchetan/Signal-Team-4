@@ -219,7 +219,7 @@ button {
   to { transform: scale(1.2); }
 }
 
-#text{
+#bust{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -230,7 +230,7 @@ button {
     -ms-transform: translate(-50%,-50%);
 }
 
-#overlay {
+.overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -240,7 +240,7 @@ button {
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
 
 }
 

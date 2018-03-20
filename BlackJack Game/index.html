@@ -6,6 +6,7 @@
   <title>Blackjack</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 
+
   <script>
   var bleep = new Audio();
   bleep.src = "beep.mp3";
@@ -18,7 +19,7 @@
 </head>
 
 
-<body>
+<body onload="userName()">
 <div class = 'container'>
   <nav>
     <ul class = 'nav'>
@@ -38,7 +39,12 @@
   </header>
 
   <aside>
-
+    <form align = 'center'>
+      <div>
+      <label id=playerLable> Player Name </label>
+      <input id = "playerName" type = "text" name = 'firstName' placeholder = "Enter Player Name">
+    </div>
+    </form>
     <br>
     <br>
     <br>
@@ -48,22 +54,23 @@
         <button id = 'stand_button' onclick='standButton()'disabled >  Stand </button>
         <button id = 'replay_button' onclick='replayButton()' disabled>  Replay </button>
       </div>
-      <div id='overlay' onclick='off()'>
-        <div id='text'>""</div>
-      </div>
+
   </aside>
+
+  <div class = 'overlay' id = 'overlay' onclick='off()'>
+        <div id ='bust'> bust </div>
+  </div>
 
   <summary align=center>
     <br>
     <br>
     <br>
       <div class = 'score' align = 'center'>
-
-        <h1 id='computerScore'> Score </h1>
+        <h1 id='computerScore'>Score</h1>
         <h1 id='computerWins'>Dealer</h1>
         <h1 id='playerScore'> Score </h1>
         <h1 id='playerWins'> Player</h1>
-        <h1 id='bust'> winner </h1>
+        <!--<h1 id='bust'> winner </h1>-->
       </div>
   </summary>
 
@@ -108,5 +115,7 @@
 
 </div>
 
+
 </body>
+
 </html>

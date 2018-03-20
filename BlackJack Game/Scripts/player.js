@@ -1,6 +1,6 @@
  class Player {
   constructor () {
-    this.name = name
+    this.name
     this.hand = []
     this.handCount = 0
     this.wins = 0

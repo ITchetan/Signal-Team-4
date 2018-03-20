@@ -6,6 +6,8 @@ var playerArray =[]
 var playerWinCounter = 0;
 var computerWinCounter = 0;
 var userWinCount
+var firstTime = true;
+var winner
 
 function hitButton () {
   bleep.play()
@@ -15,7 +17,14 @@ function hitButton () {
 
   document.getElementById('playerScore').innerHTML = user.handCount
   if (user.handCount > 21) {
+
+    document.getElementById('overlay').style.display = "block"
     document.getElementById('bust').innerHTML = compareScore()
+
+    //var result = compareScore()
+    //document.getElementById('bust').innerHTML = compareScore()
+    //document.getElementById('bust').innerHTML = result
+
   }
 
 }
@@ -26,7 +35,17 @@ function dealButton () {
   document.getElementById("hit_button").disabled = false;
   document.getElementById("stand_button").disabled = false;
   user = new Player()
-  user.name = "Chetan"
+
+
+var str = (document.getElementById("playerName").value);
+user.name = str.toUpperCase();
+
+if (firstTime) {
+
+  recallData(user.name)
+}
+  //user.name = document.getElementById("playerName").value
+  //recallData(user.name)
   computer = new Player()
   computer.name = "Dealer"
   newDeck = new Deck()
@@ -52,19 +71,19 @@ function standButton () {
   document.getElementById('image1').src = computer.displayCard(card)
   card = computer.cardDraw(newDeck)
   document.getElementById('image2').src = computer.displayCard(card)
-  // add compare score and winning screen
+
   document.getElementById('computerScore').innerHTML = computer.handCount
+    document.getElementById('overlay').style.display = "block"
   document.getElementById('bust').innerHTML = compareScore()
-  //storeData()
-
-  //document.getElementById("deal_button").disabled = false;
-
-  //document.getElementById("stand_button").disabled = true;
 
 
 }
 
-<<<<<<< HEAD
+function off(){
+  document.getElementById("overlay").style.display ="none"
+}
+
+
 function replayButton () {
   bleep.play()
   document.getElementById('image1').src = computer.displayReset()
@@ -127,46 +146,45 @@ function compareScore()
      winner = user.name + " wins!!"
    }
 return winner
-=======
-function compareScore() {
-  if (user.handCount > computer.handCount) {
-    var winner = "You win!!"
-  }
-  if (user.handCount == computer.handCount) {
-    var winner = "Draw!"
-  } else {
-    var winner = "Computer wins!!"
-  }
-  return winner
->>>>>>> 084a6784690ea15cd16a8f98bca5bbeb288a1f63
 }
-
-function myFuntion() {
-  // Not sure if this stil does anything but im afraid to remove it
-    var x = document.getElementById("dealCards");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-  }
 
 
 function storeData(playerWinsCounter1,computerWinCounter1)
 {
-  var userName= "Chetan"
+  var userName= user.name
   var userScore = playerWinsCounter1
   var computerName = "Dealer"
   var computerScore = computerWinCounter1
-  var playerArray = []
+  //var playerArray = []
+
 
   var plyObj = [{"playerName": userName, "playerScore": userScore},{"playerName":computerName,"playerScore": computerScore}];
-
   playerArray.push(plyObj);
-  //localStorage.playerRecord= JSON.parse(plyObj);
   localStorage.playerRecord = JSON.stringify(plyObj);
   playerArray = JSON.parse(localStorage.playerRecord);
   console.log(playerArray)
   document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
   document.getElementById('computerWins').innerHTML = playerArray[1].playerScore
 }
+
+function recallData(userName)
+    {
+      firstTime = false;
+      playerArray = JSON.parse(localStorage.playerRecord);
+        if (playerArray[0].playerName == userName)
+        {
+          window.alert("Last top score : " +userName +' '+ playerArray[0].playerScore + " Dealer "+ playerArray[1].playerScore  )
+            document.getElementById('playerWins').innerHTML = playerArray[0].playerScore
+          }
+        else
+        {
+
+        window.alert("No data avaiable. Please continue playing")
+
+        }
+   }
+
+   function userName()
+   {
+     window.alert("Please enter your name")
+   }
