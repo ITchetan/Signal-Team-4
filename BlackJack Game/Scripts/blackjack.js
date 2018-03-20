@@ -101,7 +101,6 @@ function off(){
 
 
 
-}
 
 // TO be used when the user wants to replay the game, resets the game board by
 // Removing all the card images

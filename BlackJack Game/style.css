@@ -216,12 +216,13 @@ button {
 
 #replay_button{
 
-  margin-top: 15px;
   background: gold;
   color: white;
   text-align: center;
   font-size: 20px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+  display: none;
+  margin-bottom: 80px
 
 
 }
@@ -256,13 +257,13 @@ button {
     top: 50%;
     left: 50%;
     font-size: 84px;
-    color: white
+    color: purple
     font-weight: bold;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
 }
 
-.overlay {
+#overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
